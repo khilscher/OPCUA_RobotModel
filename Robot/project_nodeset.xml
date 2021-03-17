@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><UANodeSet xmlns="http://opcfoundation.org/UA/2011/03/UANodeSet.xsd" xmlns:uax="http://opcfoundation.org/UA/2008/02/Types.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <NamespaceUris>
+        <Uri>RobotModel</Uri>
+    </NamespaceUris>
+    <UAObjectType BrowseName="1:RobotType" IsAbstract="false" NodeId="ns=1;s=RobotType" WriteMask="0">
+        <DisplayName>RobotType</DisplayName>
+        <References>
+            <Reference IsForward="false" ReferenceType="i=45">i=58</Reference>
+            <Reference IsForward="true" ReferenceType="i=47">ns=1;s=PowerOn</Reference>
+            <Reference IsForward="true" ReferenceType="i=46">ns=1;s=Manufacturer</Reference>
+            <Reference IsForward="true" ReferenceType="i=47">ns=1;s=Start</Reference>
+            <Reference IsForward="true" ReferenceType="i=47">ns=1;s=Stop</Reference>
+            <Reference IsForward="true" ReferenceType="i=47">ns=1;s=RuntimeHours</Reference>
+        </References>
+    </UAObjectType>
+    <UAMethod BrowseName="1:Start" Executable="0" NodeId="ns=1;s=Start_100000" WriteMask="0">
+        <DisplayName>Start</DisplayName>
+        <References>
+            <Reference IsForward="false" ReferenceType="i=47">ns=1;s=Robot1</Reference>
+        </References>
+    </UAMethod>
+    <UAMethod BrowseName="1:Stop" Executable="0" NodeId="ns=1;s=Stop_100000" WriteMask="0">
+        <DisplayName>Stop</DisplayName>
+        <References>
+            <Reference IsForward="false" ReferenceType="i=47">ns=1;s=Robot1</Reference>
+        </References>
+    </UAMethod>
+    <UAObject BrowseName="1:Factory1" EventNotifier="0" NodeId="ns=1;s=Factory1" WriteMask="0">
+        <DisplayName>Factory1</DisplayName>
+        <References>
+            <Reference IsForward="false" ReferenceType="i=35">i=85</Reference>
+            <Reference IsForward="true" ReferenceType="i=40">i=61</Reference>
+            <Reference IsForward="true" ReferenceType="i=47">ns=1;s=Line1</Reference>
+        </References>
+    </UAObject>
+    <UAVariable AccessLevel="1" BrowseName="1:PowerOn" DataType="i=1" Historizing="0" MinimumSamplingInterval="0.000000" NodeId="ns=1;s=PowerOn" ValueRank="-2" WriteMask="0">
+        <DisplayName>PowerOn</DisplayName>
+        <References>
+            <Reference IsForward="false" ReferenceType="i=47">ns=1;s=RobotType</Reference>
+            <Reference IsForward="true" ReferenceType="i=40">i=63</Reference>
+        </References>
+    </UAVariable>
+    <UAVariable AccessLevel="1" BrowseName="1:RuntimeHours" DataType="i=27" Historizing="0" MinimumSamplingInterval="0.000000" NodeId="ns=1;s=RuntimeHours_100000" ValueRank="-2" WriteMask="0">
+        <DisplayName>RuntimeHours</DisplayName>
+        <References>
+            <Reference IsForward="false" ReferenceType="i=47">ns=1;s=Robot1</Reference>
+            <Reference IsForward="true" ReferenceType="i=40">i=63</Reference>
+        </References>
+    </UAVariable>
+    <UAVariable AccessLevel="1" BrowseName="1:Manufacturer" DataType="i=12" Historizing="0" MinimumSamplingInterval="0.000000" NodeId="ns=1;s=Manufacturer_100000" ValueRank="-2" WriteMask="0">
+        <DisplayName>Manufacturer</DisplayName>
+        <References>
+            <Reference IsForward="true" ReferenceType="i=40">i=68</Reference>
+            <Reference IsForward="false" ReferenceType="i=46">ns=1;s=Robot1</Reference>
+        </References>
+    </UAVariable>
+    <UAObject BrowseName="1:Robot1" EventNotifier="0" NodeId="ns=1;s=Robot1" WriteMask="0">
+        <DisplayName>Robot1</DisplayName>
+        <References>
+            <Reference IsForward="false" ReferenceType="i=47">ns=1;s=Line1</Reference>
+            <Reference IsForward="true" ReferenceType="i=47">ns=1;s=PowerOn_100000</Reference>
+            <Reference IsForward="true" ReferenceType="i=47">ns=1;s=RuntimeHours_100000</Reference>
+            <Reference IsForward="true" ReferenceType="i=46">ns=1;s=Manufacturer_100000</Reference>
+            <Reference IsForward="true" ReferenceType="i=47">ns=1;s=Start_100000</Reference>
+            <Reference IsForward="true" ReferenceType="i=47">ns=1;s=Stop_100000</Reference>
+            <Reference IsForward="true" ReferenceType="i=40">ns=1;s=RobotType</Reference>
+        </References>
+    </UAObject>
+    <UAMethod BrowseName="1:Start" Executable="1" NodeId="ns=1;s=Start" WriteMask="0">
+        <DisplayName>Start</DisplayName>
+        <References>
+            <Reference IsForward="false" ReferenceType="i=47">ns=1;s=RobotType</Reference>
+        </References>
+    </UAMethod>
+    <UAObject BrowseName="1:Line1" EventNotifier="0" NodeId="ns=1;s=Line1" WriteMask="0">
+        <DisplayName>Line1</DisplayName>
+        <References>
+            <Reference IsForward="false" ReferenceType="i=47">ns=1;s=Factory1</Reference>
+            <Reference IsForward="true" ReferenceType="i=40">i=61</Reference>
+            <Reference IsForward="true" ReferenceType="i=47">ns=1;s=Robot1</Reference>
+        </References>
+    </UAObject>
+    <UAMethod BrowseName="1:Stop" Executable="1" NodeId="ns=1;s=Stop" WriteMask="0">
+        <DisplayName>Stop</DisplayName>
+        <References>
+            <Reference IsForward="false" ReferenceType="i=47">ns=1;s=RobotType</Reference>
+        </References>
+    </UAMethod>
+    <UAVariable AccessLevel="1" BrowseName="1:RuntimeHours" DataType="i=27" Historizing="0" MinimumSamplingInterval="0.000000" NodeId="ns=1;s=RuntimeHours" ValueRank="-2" WriteMask="0">
+        <DisplayName>RuntimeHours</DisplayName>
+        <References>
+            <Reference IsForward="false" ReferenceType="i=47">ns=1;s=RobotType</Reference>
+            <Reference IsForward="true" ReferenceType="i=40">i=63</Reference>
+        </References>
+    </UAVariable>
+    <UAVariable AccessLevel="1" BrowseName="1:Manufacturer" DataType="i=12" Historizing="0" MinimumSamplingInterval="0.000000" NodeId="ns=1;s=Manufacturer" ValueRank="-2" WriteMask="0">
+        <DisplayName>Manufacturer</DisplayName>
+        <References>
+            <Reference IsForward="false" ReferenceType="i=46">ns=1;s=RobotType</Reference>
+            <Reference IsForward="true" ReferenceType="i=40">i=68</Reference>
+        </References>
+    </UAVariable>
+    <UAVariable AccessLevel="1" BrowseName="1:PowerOn" DataType="i=1" Historizing="0" MinimumSamplingInterval="0.000000" NodeId="ns=1;s=PowerOn_100000" ValueRank="-2" WriteMask="0">
+        <DisplayName>PowerOn</DisplayName>
+        <References>
+            <Reference IsForward="false" ReferenceType="i=47">ns=1;s=Robot1</Reference>
+            <Reference IsForward="true" ReferenceType="i=40">i=63</Reference>
+        </References>
+    </UAVariable>
+</UANodeSet>
